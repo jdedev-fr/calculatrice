@@ -1,0 +1,49 @@
+#calc
+{
+    position: absolute;
+    top:0;
+    left:0;
+    right: 0;
+    bottom: 0;
+    width:320px;
+    height: 450px;
+    margin: auto;
+    padding: 10px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: grey;
+}
+
+#result
+{
+    border-radius: 5px;
+    background-color: white;
+    border: solid black 1px;
+    width:300px;
+    height: 60px;
+}
+.blockBout
+{
+    width:300px;
+    margin: 10px auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: grey;
+}
+.bout
+{
+    border-radius: 5px;
+    background-color: lightgray;
+    border: solid black 1px;
+    width:70px;
+    height: 40px;
+    text-align: center;
+    padding-top: 20px;
+}
