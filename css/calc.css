@@ -23,8 +23,9 @@
     border-radius: 5px;
     background-color: white;
     border: solid black 1px;
-    width:300px;
-    height: 60px;
+    width:280px;
+    height: 40px;
+    padding: 10px;
 }
 .blockBout
 {
