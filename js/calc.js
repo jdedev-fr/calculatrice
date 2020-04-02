@@ -117,3 +117,74 @@ function calcResult() {
         }
     }
 }
+
+/* Je déclare une fonction clearAll qui ne prends aucun paramètre
+Cette fonction clearAll sera appellé par le HTML à chaque clic
+sur CE de la calculatrice */
+function clearAll() {
+    document.getElementById("result").innerHTML = ""
+}
+
+/* Je déclare une fonction bkSp qui ne prends aucun paramètre
+Cette fonction bkSp sera appellé par le HTML à chaque clic
+sur <- de la calculatrice */
+function bkSp() {
+    var monResult = document.getElementById("result").innerHTML
+    document.getElementById("result").innerHTML = monResult.substr(0, monResult.length - 1)
+}
+
+/* Je déclare une fonction clearOne qui ne prends aucun paramètre
+Cette fonction clearOne sera appellé par le HTML à chaque clic
+sur C de la calculatrice */
+function clearOne() {
+    var monResult = document.getElementById("result").innerHTML;
+    //On cherche le symbole /
+    if (monResult.indexOf("/") >= 0) {
+        // Il y a un symbole / dans la chaine,
+        // On prends la partie du début 0 à /
+        var ope1 = monResult.substr(0, monResult.indexOf("/"))
+        // On remplace le contenu par ope1
+        document.getElementById("result").innerHTML = ope1;
+    }
+    else {
+        // Il n'y a pas de symbole / je cherche le symbole *
+        if (monResult.indexOf("*") >= 0) {
+            // Il y a un symbole * dans la chaine, 
+            // On prends la partie du début 0 à *
+            var ope1 = monResult.substr(0, monResult.indexOf("*"))
+            // On remplace le contenu par ope1
+            document.getElementById("result").innerHTML = ope1;
+        }
+        else {
+            // Il n'y a pas de symbole / 
+            // Il n'y a pas de symbole * je cherche le symbole -
+            if (monResult.indexOf("-") >= 0) {
+                // Il y a un symbole - dans la chaine, 
+                // On prends la partie du début 0 à -
+                var ope1 = monResult.substr(0, monResult.indexOf("-"))
+                // On remplace le contenu par ope1
+                document.getElementById("result").innerHTML = ope1;
+            }
+            else {
+                // Il n'y a pas de symbole / 
+                // Il n'y a pas de symbole *
+                // Il n'y a pas de symbole - je cherche le symbole +
+                if (monResult.indexOf("+") >= 0) {
+                    // Il y a un symbole + dans la chaine, 
+                    // On prends la partie du début 0 à +
+                    var ope1 = monResult.substr(0, monResult.indexOf("+"))
+                    // On remplace le contenu par ope1
+                    document.getElementById("result").innerHTML = ope1;
+                }
+                else {
+                    // Il n'y a pas de symbole / 
+                    // Il n'y a pas de symbole *
+                    // Il n'y a pas de symbole -
+                    // Il n'y a pas de symbole +
+                    // on efface tout
+                    clearAll();
+                }
+            }
+        }
+    }
+}
